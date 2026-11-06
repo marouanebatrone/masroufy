@@ -1,0 +1,251 @@
+/* Masroufy's website: the app's colours, the phone's own fonts, light and dark. No web
+   fonts or other files from elsewhere: opening a page asks nothing of anyone but GitHub. */
+:root {
+  color-scheme: light dark;
+  --background: #f6f4ef;
+  --surface: #ffffff;
+  --surface-muted: #efece5;
+  --border: #e4dfd5;
+  --text: #1c1b18;
+  --text-muted: #6b665d;
+  --primary: #0e8f6e;
+  --primary-muted: #e1f3ec;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0e1110;
+    --surface: #171b1a;
+    --surface-muted: #1f2422;
+    --border: #2a302e;
+    --text: #f1f0eb;
+    --text-muted: #a3a7a1;
+    --primary: #2bc593;
+    --primary-muted: #16362c;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font:
+    17px/1.6 system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    'Noto Sans',
+    'Noto Sans Arabic',
+    Tahoma,
+    sans-serif;
+}
+
+a {
+  color: var(--primary);
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px 16px 64px;
+}
+
+/* Header: the app's name and the three languages. */
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 16px;
+  padding-bottom: 20px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand img {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+}
+
+.langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.langs a {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.langs a[aria-current='page'] {
+  border-color: transparent;
+  background: var(--primary-muted);
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* The policy. */
+h1 {
+  margin: 8px 0 4px;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 36px 0 8px;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+p,
+ul {
+  margin: 0 0 12px;
+}
+
+ul {
+  padding-inline-start: 22px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+.updated {
+  margin-bottom: 20px;
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  overflow-wrap: anywhere;
+}
+
+.summary {
+  margin: 24px 0 8px;
+  padding: 18px 22px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.summary h2 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.summary ul {
+  margin-bottom: 0;
+}
+
+table {
+  width: 100%;
+  margin: 8px 0 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  border-spacing: 0;
+  background: var(--surface);
+  font-size: 16px;
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+th {
+  background: var(--surface-muted);
+  font-weight: 600;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+footer {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Home page. */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 40px 16px;
+  text-align: center;
+}
+
+.home-icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 24px;
+}
+
+.home h1 {
+  margin: 20px 0 12px;
+}
+
+.taglines p {
+  margin: 0 0 6px;
+  color: var(--text-muted);
+}
+
+.home-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin: 28px 0 20px;
+}
+
+.home-links a {
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  text-decoration: none;
+}
+
+.home-contact {
+  color: var(--text-muted);
+  font-size: 15px;
+}
